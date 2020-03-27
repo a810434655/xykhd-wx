@@ -107,7 +107,7 @@ Page({
           userInfo:data
         })
         wx.setStorageSync("userInfo", data)
-        wx.setStorageSync("phone", item.phone)
+        wx.setStorageSync("phone", item.username)
       })
       .catch(e => {
         $Message({

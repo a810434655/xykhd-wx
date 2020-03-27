@@ -75,9 +75,12 @@ Page({
     }
     _activity.putUpdata(data)
       .then(res => {
-        if (res == "更新成功") {
+        if (res == "修改成功") {
           $Message({
             content: res
+          })
+          wx.switchTab({
+            url:"/pages/home/my/my"
           })
         }
       })
@@ -96,7 +99,8 @@ Page({
   handleEdit() {
     _user.quit()
       .then(res => {
-        if (res == "登出成功") {
+        console.log(res)
+        if (res == "退出成功") {
           wx.clearStorage()
           $Message({
             content: "退出登录成功"

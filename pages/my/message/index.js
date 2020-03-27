@@ -2,6 +2,9 @@
 var _user = require("../../../service/user.js")
 var util = require('../../../utils/util.js')
 var app = getApp()
+const {
+  $Message
+} = require('../../../resources/dist/base/index')
 var that
 Page({
 

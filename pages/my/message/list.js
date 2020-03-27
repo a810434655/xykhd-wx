@@ -34,19 +34,19 @@ Page({
         that.data.messageList.splice(0, that.data.messageList.length)
       }
       data.records.forEach(c => {
-        console.log(c)
-        if (that.data.platform == 'ios') {
-          c.ctime = c.ctime.replace("T", " ").substring(0,19)
-          var ctime = new Date(c.ctime)
-          c.ctime = _util.formatTime(ctime,0)
-        }else{
-          var ctime = new Date(c.ctime)
-          c.ctime = _util.formatTime(ctime,1)
-        }
-        if(c.jsonData){
-          c.jsonData = JSON.parse(c.jsonData)
-        }
+          let Y, M, D, h, m,time
+          time = new Date(c.ctime)
+          Y = time.getFullYear() + '/';
+          M = (time.getMonth() + 1 < 10 ? '0' + (time.getMonth() + 1) : time.getMonth() + 1) + '/';
+          D = time.getDate() + ' ';
+          h = (time.getHours() < 10 ? '0' + time.getHours() : time.getHours()) + ':';
+          m = (time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes());
+          c.ctime = Y + M + D + h + m
+          if(c.jsonData){
+            c.jsonData = JSON.parse(c.jsonData)
+          }
       })
+
       that.setData({
         messageList: that.data.messageList.concat(data.records)
       })

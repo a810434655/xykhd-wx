@@ -186,6 +186,12 @@
 					"pathName": "pages/activity/vote/vote",
 					"query": "beginDate=2019-08-30&endDate=2019-12-31&formId=134&theme=3&title=睡觉&vote=28045986",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "开奖通知",
+					"pathName": "pages/my/message/index",
+					"scene": null
 				}
 			]
 		}

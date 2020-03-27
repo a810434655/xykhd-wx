@@ -36,4 +36,5 @@
     </view>
     <view class='cell-ft'></view>
   </i-col>
+  <i-message id="message" />
 </view>

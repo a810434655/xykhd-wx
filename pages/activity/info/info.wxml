@@ -77,13 +77,13 @@
     </i-row>
     <i-row wx:if="{{tabId == 1}}" i-class="activity chat-content-end">
       <i-col span="24" i-class='c-content center vertical-center timeline' wx:for="{{activityInfo.timeLine}}" wx:key="{{index}}">
-        <i-col span="1" >
+        <i-col span="1">
             <view class="theme-bg-color-{{activityInfo.theme}}" style="border-radius:20rpx;margin-top:8rpx;width:25rpx;height:25rpx;{{item.type == 'time'? 'opacity:.0': '' }}"></view>
         </i-col>
-        <i-col span="6" i-class="right-time">
+        <i-col span="7" offset="1" i-class="left-time">
           <text style='display:inline-block;'>{{item.date}}</text>
         </i-col>
-        <i-col span="16" offset='1'>
+        <i-col span="14" offset='1'>
           <view style='display:inline-block;color:#2c3141' class='text-all'>{{item.info}}</view>
         </i-col>
       </i-col>

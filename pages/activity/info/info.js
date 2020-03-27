@@ -302,14 +302,13 @@ Page({
         }
         res.data.data.records.forEach(c => {
           let time = new Date(c.ctime);
-          let Y, M, D, h, m, s
+          let Y, M, D, h, m
           Y = time.getFullYear() + '-';
           M = (time.getMonth() + 1 < 10 ? '0' + (time.getMonth() + 1) : time.getMonth() + 1) + '-';
           D = time.getDate() + ' ';
           h = (time.getHours() < 10 ? '0' + time.getHours() : time.getHours()) + ':';
-          m = (time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()) + ':';
-          s = (time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds());
-          c.ctime = Y + M + D + h + m + s
+          m = (time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes());
+          c.ctime = Y + M + D + h + m
         })
         that.setData({
           commentList: that.data.commentList.concat(res.data.data.records)
