@@ -14,5 +14,5 @@ module.exports = {
   // dreamActServer: "http://47.106.174.203/dreamact",
   // ossServer: "http://47.106.174.203/oss",
   // dreamStarServer:"http://47.106.174.203/dreamstar",
-  version: "4.0.8"
+  version: "4.0.12"
 }
