@@ -54,15 +54,15 @@ Page({
     // console.log(that.data.type)
     if(that.data.type == 1){
       _activity.getUserActivityPage({ page: that.data.page, size: that.data.size }).then(data => {
-        // console.log(data)
-        data.forEach(e => {
+        console.log(data)
+        data.records.forEach(e => {
           e.bannerData = JSON.parse(e.bannerData)
         })
         if (that.data.page == 1) {
           that.data.recordList.splice(0, that.data.recordList.length)
         }
         that.setData({
-          recordList: that.data.recordList.concat(data)
+          recordList: that.data.recordList.concat(data.records)
         })
         wx.stopPullDownRefresh()
         wx.hideLoading()
@@ -72,7 +72,6 @@ Page({
       })
     }else {
       _activity.getCollectActivityPage({ page: that.data.page, size: that.data.size }).then(data => {
-       
         data.records.forEach(e => {
           e.bannerData = JSON.parse(e.bannerData)
         })
